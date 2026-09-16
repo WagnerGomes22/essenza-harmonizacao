@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Essenza Harmonização | Saúde e beleza no Morumbi</title>
+  <meta name="description" content="Essenza Harmonização: cuidado, acolhimento e beleza no Morumbi, em São Paulo. Agende seu atendimento pelo WhatsApp.">
+  <meta name="theme-color" content="#6b243b">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%236b243b'/%3E%3Cpath d='M18 17h30v7H27v6h18v7H27v7h22v7H18z' fill='%23fbf8f3'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --ivory: #fbf8f3;
+      --paper: #fffdf9;
+      --ink: #24171d;
+      --mulberry: #6b243b;
+      --rose: #d9a6ae;
+      --champagne: #e7d3b5;
+      --sage: #788276;
+      --line: rgba(36, 23, 29, .16);
+      --serif: "Iowan Old Style", "Baskerville", "Times New Roman", serif;
+      --sans: "Aptos", "Segoe UI", Arial, sans-serif;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--ivory);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 1rem;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+    .media-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: 3px solid var(--champagne); outline-offset: 4px; }
+    .skip-link { position: fixed; left: 1rem; top: -5rem; z-index: 100; padding: .8rem 1rem; background: var(--ink); color: white; }
+    .skip-link:focus { top: 1rem; }
+    .wrap { width: min(calc(100% - 2.5rem), var(--max)); margin-inline: auto; }
+
+    .site-header {
+      position: absolute;
+      inset: 0 0 auto;
+      z-index: 20;
+      padding: 1.4rem 0;
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .brand { text-decoration: none; line-height: 1; }
+    .brand strong { display: block; font: 500 1.65rem/1 var(--serif); letter-spacing: .09em; }
+    .brand span { display: block; margin-top: .38rem; font-size: .68rem; letter-spacing: .2em; color: var(--mulberry); }
+    .nav-links { display: flex; align-items: center; gap: 1.65rem; }
+    .nav-links a { text-decoration: none; font-size: .93rem; }
+    .nav-links a:not(.nav-cta):hover { color: var(--mulberry); }
+    .nav-cta { padding: .68rem 1.15rem; border: 1px solid var(--mulberry); color: var(--mulberry); border-radius: 999px; }
+    .nav-cta:hover { background: var(--mulberry); color: white; }
+    .menu-button { display: none; background: none; border: 0; padding: .5rem; color: var(--ink); }
+
+    .hero {
+      min-height: 780px;
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      align-items: center;
+      padding: 8rem 0 4rem;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(231, 211, 181, .28), transparent 28%),
+        linear-gradient(115deg, var(--paper) 0 57%, #ead5d8 57% 100%);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 43rem;
+      height: 43rem;
+      border: 1px solid rgba(107, 36, 59, .18);
+      border-radius: 50%;
+      right: -18rem;
+      top: -18rem;
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.04fr .96fr; align-items: center; gap: 4.5rem; }
+    .hero-copy { position: relative; z-index: 2; max-width: 610px; animation: arrive .8s cubic-bezier(.2,.8,.2,1) both; }
+    .kicker { margin: 0 0 1.2rem; color: var(--mulberry); font-size: .86rem; letter-spacing: .08em; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      margin-bottom: 1.5rem;
+      font: 400 clamp(3.5rem, 6.2vw, 6.6rem)/.91 var(--serif);
+      letter-spacing: -.045em;
+      text-wrap: balance;
+    }
+    .hero-copy > p:not(.kicker) { max-width: 35rem; font-size: 1.16rem; line-height: 1.7; color: #57464d; }
+    .actions { display: flex; flex-wrap: wrap; gap: .85rem; margin-top: 2rem; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: .8rem 1.45rem; border: 1px solid var(--mulberry); border-radius: 999px; text-decoration: none; font-weight: 650; transition: transform .2s, background .2s, color .2s; }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { background: var(--mulberry); color: white; }
+    .button-primary:hover { background: #51182b; }
+    .button-ghost { color: var(--mulberry); }
+    .button-ghost:hover { background: rgba(107,36,59,.07); }
+
+    .hero-visual { position: relative; min-height: 590px; display: grid; place-items: end center; z-index: 1; }
+    .arch {
+      width: min(100%, 470px);
+      height: 585px;
+      border-radius: 240px 240px 1.5rem 1.5rem;
+      position: relative;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      color: rgba(36,23,29,.6);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.72), transparent 40%),
+        linear-gradient(160deg, #d7a2aa, #efdfe0 58%, #c88996);
+      box-shadow: 0 28px 70px rgba(78, 37, 51, .18);
+    }
+    .arch::before { content: ""; position: absolute; inset: 16px; border: 1px solid rgba(255,255,255,.7); border-radius: inherit; z-index: 2; pointer-events: none; }
+    .arch .media-img { object-position: 50% 28%; }
+    .rating-float { position: absolute; left: -2rem; bottom: 2.4rem; z-index: 3; width: 180px; padding: 1.2rem; background: rgba(255,253,249,.93); border: 1px solid white; backdrop-filter: blur(12px); box-shadow: 0 12px 35px rgba(64,32,42,.15); }
+    .rating-float strong { font: 500 2.25rem/1 var(--serif); }
+    .stars { color: #a46020; letter-spacing: .08em; }
+    .rating-float span { display: block; font-size: .78rem; color: #685860; }
+
+    .trust-bar { background: var(--mulberry); color: white; }
+    .trust-grid { display: grid; grid-template-columns: 1.05fr 1fr 1.35fr; align-items: center; }
+    .trust-item { min-height: 110px; display: flex; align-items: center; gap: 1rem; padding: 1.3rem 2rem; border-right: 1px solid rgba(255,255,255,.22); }
+    .trust-item:first-child { padding-left: 0; }
+    .trust-item:last-child { border-right: 0; }
+    .trust-item b { font: 500 1.8rem/1 var(--serif); }
+    .trust-item span { font-size: .9rem; color: #f2dfe3; }
+
+    section { padding: clamp(5rem, 9vw, 8.5rem) 0; }
+    .section-intro { max-width: 690px; margin-bottom: 3.5rem; }
+    .section-intro p { color: #6c5961; }
+    h2 { font: 400 clamp(2.65rem, 5vw, 5rem)/1 var(--serif); letter-spacing: -.035em; text-wrap: balance; margin-bottom: 1.3rem; }
+    h3 { font: 500 1.55rem/1.2 var(--serif); }
+
+    .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(3rem, 7vw, 7rem); align-items: center; }
+    .portrait-slot { min-height: 570px; border-radius: 14rem 14rem .8rem .8rem; background: #e8d7ca; display: grid; place-items: center; overflow: hidden; position: relative; }
+    .portrait-slot::after { content: ""; position: absolute; inset: 1.2rem; border: 1px solid rgba(255,255,255,.72); border-radius: inherit; z-index: 2; pointer-events: none; }
+    .portrait-slot .media-img { object-position: center 54%; }
+    .about-copy p { max-width: 610px; color: #5d4d54; }
+    .principles { display: grid; gap: 0; margin-top: 2.5rem; border-top: 1px solid var(--line); }
+    .principle { display: grid; grid-template-columns: 44px 1fr; gap: 1rem; padding: 1.35rem 0; border-bottom: 1px solid var(--line); }
+    .principle b { color: var(--mulberry); font: 500 1.25rem/1 var(--serif); }
+    .principle strong { display: block; margin-bottom: .15rem; }
+    .principle span { color: #6b5a62; font-size: .95rem; }
+
+    .experience { background: var(--ink); color: white; overflow: hidden; position: relative; }
+    .experience::before { content: "ESSENZA"; position: absolute; right: -1rem; bottom: -4.5rem; font: 400 12rem/1 var(--serif); color: rgba(255,255,255,.035); letter-spacing: -.05em; }
+    .experience .section-intro p { color: #c8b9c0; }
+    .care-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255,255,255,.22); }
+    .care { padding: 2.3rem 2.4rem 1rem 0; margin-right: 2.4rem; border-right: 1px solid rgba(255,255,255,.22); }
+    .care:last-child { border-right: 0; margin-right: 0; }
+    .care p { color: #cbbfc4; }
+    .care-mark { width: 46px; height: 46px; border: 1px solid var(--rose); border-radius: 50%; display: grid; place-items: center; margin-bottom: 2rem; color: var(--rose); font: 500 1.2rem var(--serif); }
+
+    .gallery-grid { display: grid; grid-template-columns: 1.35fr .8fr; grid-template-rows: 270px 270px; gap: 1rem; }
+    .gallery-slot { margin: 0; background: #eadde0; display: grid; place-items: center; min-height: 260px; overflow: hidden; position: relative; }
+    .gallery-slot:first-child { grid-row: 1 / 3; background: #d8b0b7; }
+    .gallery-slot:nth-child(3) { background: #e4d8c6; }
+    .gallery-slot::before { content: ""; position: absolute; inset: .75rem; border: 1px solid rgba(255,255,255,.6); z-index: 2; pointer-events: none; }
+    .gallery-slot figcaption { position: absolute; z-index: 3; left: 1.5rem; bottom: 1.5rem; padding: .5rem .8rem; background: rgba(36,23,29,.78); color: white; font-size: .82rem; backdrop-filter: blur(8px); }
+    .gallery-slot:nth-child(2) .media-img { object-position: center 38%; }
+    .gallery-slot:nth-child(3) .media-img { object-position: center 28%; }
+
+    .reviews { background: #f0e5e6; }
+    .reviews-head { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-bottom: 3rem; }
+    .score { text-align: right; flex: none; }
+    .score strong { font: 400 4.5rem/1 var(--serif); }
+    .score span { display: block; color: #6a565e; }
+    .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    blockquote { margin: 0; min-height: 280px; padding: 2rem; background: var(--paper); display: flex; flex-direction: column; justify-content: space-between; border-top: 3px solid var(--mulberry); }
+    blockquote p { font: 400 1.28rem/1.55 var(--serif); }
+    blockquote cite { font-style: normal; font-size: .9rem; color: #6b5a62; }
+    blockquote .stars { margin-bottom: 1.4rem; }
+
+    .contact { padding-bottom: 0; }
+    .contact-panel { display: grid; grid-template-columns: .9fr 1.1fr; background: var(--mulberry); color: white; }
+    .contact-copy { padding: clamp(2.5rem, 6vw, 6rem); }
+    .contact-copy h2 { max-width: 600px; }
+    .contact-copy > p { max-width: 500px; color: #efdfe3; }
+    .contact-list { margin: 2.5rem 0; padding: 0; list-style: none; border-top: 1px solid rgba(255,255,255,.25); }
+    .contact-list li { padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,.25); }
+    .contact-list a { text-decoration-thickness: 1px; text-underline-offset: 4px; }
+    .contact .button-primary { background: white; color: var(--mulberry); border-color: white; }
+    .contact .button-primary:hover { background: var(--champagne); }
+    .contact-visual { min-height: 620px; background: #d8aeb5; display: grid; place-items: center; position: relative; overflow: hidden; }
+    .contact-visual::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 62%, rgba(36,23,29,.28)); pointer-events: none; }
+    .contact-visual .media-img { object-position: center 52%; }
+
+    footer { background: var(--ink); color: white; padding: 2.2rem 0; }
+    .footer-row { display: flex; justify-content: space-between; gap: 2rem; align-items: center; }
+    .footer-row p { margin: 0; font-size: .86rem; color: #baaeb3; }
+    .inclusive { color: #ead2d7 !important; }
+
+    @keyframes arrive { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+
+    @media (max-width: 900px) {
+      .site-header { position: absolute; }
+      .menu-button { display: block; }
+      .nav-links { display: none; position: absolute; left: 1.25rem; right: 1.25rem; top: 5rem; padding: 1.2rem; background: var(--paper); box-shadow: 0 18px 45px rgba(49,26,34,.15); flex-direction: column; align-items: stretch; }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: .6rem; }
+      .hero { padding-top: 9rem; background: linear-gradient(180deg, var(--paper) 0 58%, #ead5d8 58%); }
+      .hero-grid, .about-grid, .contact-panel { grid-template-columns: 1fr; }
+      .hero-grid { gap: 3rem; }
+      .hero-copy { max-width: 700px; }
+      .hero-visual { min-height: 520px; }
+      .arch { height: 520px; max-width: 430px; }
+      .rating-float { left: 0; }
+      .trust-grid { grid-template-columns: 1fr; }
+      .trust-item, .trust-item:first-child { padding: 1.2rem 0; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.2); }
+      .care-grid, .review-grid { grid-template-columns: 1fr; }
+      .care { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.22); margin-right: 0; padding-right: 0; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-slot:first-child { grid-column: 1 / 3; grid-row: auto; }
+      .contact-visual { min-height: 480px; }
+    }
+
+    @media (max-width: 600px) {
+      .wrap { width: min(calc(100% - 1.5rem), var(--max)); }
+      .brand strong { font-size: 1.35rem; }
+      h1 { font-size: clamp(3.2rem, 16vw, 4.6rem); }
+      .hero { min-height: auto; }
+      .hero-visual { min-height: 450px; }
+      .arch { height: 450px; }
+      .rating-float { bottom: 1.2rem; }
+      .portrait-slot { min-height: 430px; }
+      .gallery-grid { display: grid; grid-template-columns: 1fr; grid-template-rows: auto; }
+      .gallery-slot:first-child { grid-column: auto; min-height: 390px; }
+      .reviews-head { align-items: flex-start; flex-direction: column; }
+      .score { text-align: left; }
+      blockquote { min-height: 240px; }
+      .contact-copy { padding: 3rem 1.5rem; }
+      .contact-visual { min-height: 400px; }
+      .footer-row { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="#inicio" aria-label="Essenza Harmonização — início">
+        <strong>ESSENZA</strong>
+        <span>HARMONIZAÇÃO · SÃO PAULO</span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
+      </button>
+      <nav class="nav-links" id="menu" aria-label="Navegação principal">
+        <a href="#essenza">A Essenza</a>
+        <a href="#cuidado">Nosso cuidado</a>
+        <a href="#avaliacoes">Avaliações</a>
+        <a class="nav-cta" href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="inicio">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="kicker">Saúde, beleza e cuidado no Morumbi</p>
+          <h1>Harmonia que começa no acolhimento.</h1>
+          <p>Um espaço dedicado a cuidar de você com escuta, atenção e naturalidade — da recepção a cada detalhe do atendimento.</p>
+          <div class="actions">
+            <a class="button button-primary" href="https://wa.me/5511915913636" target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+            <a class="button button-ghost" href="#essenza">Conhecer a clínica</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="arch">
+            <img class="media-img" src="assets/banner-principal.jpg" alt="Profissional da Essenza Harmonização" width="683" height="1024" fetchpriority="high">
+          </div>
+          <div class="rating-float" aria-label="Nota 4,8 de 5 com 161 avaliações">
+            <strong>4,8</strong>
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <span>161 avaliações no Google</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-bar" aria-label="Destaques da Essenza">
+      <div class="wrap trust-grid">
+        <div class="trust-item"><b>4,8</b><span>avaliação média</span></div>
+        <div class="trust-item"><b>161</b><span>experiências compartilhadas</span></div>
+        <div class="trust-item"><b>Morumbi</b><span>R. Dom Armando Lombardi, 490</span></div>
+      </div>
+    </div>
+
+    <section id="essenza">
+      <div class="wrap about-grid">
+        <div class="portrait-slot">
+          <img class="media-img" src="assets/interior-detalhes.jpg" alt="Ambiente interno acolhedor da Essenza" width="2304" height="3072" loading="lazy">
+        </div>
+        <div class="about-copy">
+          <p class="kicker">A Essenza</p>
+          <h2>Você é recebida antes de ser atendida.</h2>
+          <p>Na Essenza, confiança se constrói desde o primeiro contato. O ambiente limpo, acolhedor e organizado acompanha uma equipe reconhecida pela atenção e pelo cuidado em cada etapa.</p>
+          <div class="principles">
+            <div class="principle"><b>01</b><div><strong>Escuta atenta</strong><span>Cada atendimento começa por entender você.</span></div></div>
+            <div class="principle"><b>02</b><div><strong>Cuidado nos detalhes</strong><span>Da recepção ao acompanhamento, presença de verdade.</span></div></div>
+            <div class="principle"><b>03</b><div><strong>Beleza com equilíbrio</strong><span>Escolhas guiadas por harmonia, confiança e naturalidade.</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience" id="cuidado">
+      <div class="wrap">
+        <div class="section-intro">
+          <p class="kicker">Nosso jeito de cuidar</p>
+          <h2>Uma experiência segura, próxima e sem pressa.</h2>
+          <p>Mais do que um procedimento, cada visita é um encontro com profissionais que explicam, orientam e acompanham.</p>
+        </div>
+        <div class="care-grid">
+          <article class="care"><div class="care-mark">E</div><h3>Entender</h3><p>Conversamos sobre suas expectativas para que cada decisão faça sentido para você.</p></article>
+          <article class="care"><div class="care-mark">C</div><h3>Cuidar</h3><p>Você encontra um ambiente organizado e uma equipe atenta do início ao fim.</p></article>
+          <article class="care"><div class="care-mark">A</div><h3>Acompanhar</h3><p>Orientações claras ajudam você a seguir cada etapa com mais tranquilidade.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="galeria-titulo">
+      <div class="wrap">
+        <div class="section-intro">
+          <p class="kicker">Conheça o espaço</p>
+          <h2 id="galeria-titulo">Imagens que mostram como é estar aqui.</h2>
+          <p>Os espaços abaixo estão prontos para receber fotos reais da clínica, da equipe e do atendimento.</p>
+        </div>
+        <div class="gallery-grid">
+          <figure class="gallery-slot"><img class="media-img" src="assets/recepcao.jpg" alt="Recepção iluminada da Essenza" width="600" height="450" loading="lazy"><figcaption>Recepção Essenza</figcaption></figure>
+          <figure class="gallery-slot"><img class="media-img" src="assets/fachada.jpg" alt="Fachada da Essenza Harmonização no Morumbi" width="362" height="337" loading="lazy"><figcaption>Fachada no Morumbi</figcaption></figure>
+          <figure class="gallery-slot"><img class="media-img" src="assets/equipe.jpg" alt="Equipe da Essenza Harmonização reunida" width="451" height="338" loading="lazy"><figcaption>Equipe Essenza</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews" id="avaliacoes">
+      <div class="wrap">
+        <div class="reviews-head">
+          <div class="section-intro" style="margin-bottom:0">
+            <p class="kicker">Quem já viveu a experiência</p>
+            <h2>O cuidado aparece nas palavras.</h2>
+          </div>
+          <div class="score"><strong>4,8</strong><div class="stars" aria-hidden="true">★★★★★</div><span>161 avaliações</span></div>
+        </div>
+        <div class="review-grid">
+          <blockquote><div><div class="stars" aria-label="5 estrelas">★★★★★</div><p>“Uma das melhores experiências da minha vida. Eu me senti acolhida desde a recepção.”</p></div><cite>Mirian Silvestre</cite></blockquote>
+          <blockquote><div><div class="stars" aria-label="5 estrelas">★★★★★</div><p>“Desde o atendimento com a recepcionista até as doutoras, todas muito atenciosas.”</p></div><cite>Denny Lima</cite></blockquote>
+          <blockquote><div><div class="stars" aria-label="5 estrelas">★★★★★</div><p>“O ambiente é extremamente limpo, acolhedor e organizado. Transmite muita confiança.”</p></div><cite>Sheilla Scheffer</cite></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contato">
+      <div class="contact-panel">
+        <div class="contact-copy">
+          <p class="kicker" style="color:#e9c8cf">Seu momento começa aqui</p>
+          <h2>Vamos conversar sobre você?</h2>
+          <p>Fale com a equipe Essenza para tirar dúvidas e agendar seu atendimento.</p>
+          <ul class="contact-list">
+            <li><strong>WhatsApp:</strong> <a href="https://wa.me/5511915913636" target="_blank" rel="noopener">(11) 91591-3636</a></li>
+            <li><strong>Endereço:</strong> R. Dom Armando Lombardi, 490 — Morumbi, São Paulo</li>
+            <li><strong>Horário informado:</strong> atendimento até 20h</li>
+            <li><strong>Site:</strong> <a href="https://essenzaharmonizacao.com" target="_blank" rel="noopener">essenzaharmonizacao.com</a></li>
+          </ul>
+          <div class="actions">
+            <a class="button button-primary" href="https://wa.me/5511915913636" target="_blank" rel="noopener">Agendar atendimento</a>
+            <a class="button button-ghost" style="color:white;border-color:rgba(255,255,255,.55)" href="https://www.google.com/maps/search/?api=1&query=R.%20Dom%20Armando%20Lombardi%2C%20490%20Morumbi%20S%C3%A3o%20Paulo" target="_blank" rel="noopener">Ver como chegar</a>
+          </div>
+        </div>
+        <div class="contact-visual">
+          <img class="media-img" src="assets/interior-detalhes.jpg" alt="Detalhes do ambiente interno da Essenza" width="2304" height="3072" loading="lazy">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <p>© <span id="ano">2026</span> Essenza Harmonização · São Paulo</p>
+      <p class="inclusive">Um espaço acolhedor para a comunidade LGBTQ+ · liderado por mulheres</p>
+    </div>
+  </footer>
+
+  <script>
+    const button = document.querySelector('.menu-button');
+    const menu = document.querySelector('#menu');
+    button.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      button.setAttribute('aria-expanded', String(open));
+      button.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    });
+    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      menu.classList.remove('open');
+      button.setAttribute('aria-expanded', 'false');
+      button.setAttribute('aria-label', 'Abrir menu');
+    }));
+    document.querySelector('#ano').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
